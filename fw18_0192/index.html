@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="navbar.CSS">
+    <title>Fraazo</title>
+   
+</head>
+<body>
+  <!-- navbar start -->
+    <div id="top">
+        <div class="logo">
+            <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDI0LjEuMywgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPgo8c3ZnIHZlcnNpb249IjEuMSIgaWQ9IkxheWVyXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4IgoJIHZpZXdCb3g9IjAgMCAyMDkuNyA2OS43IiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCAyMDkuNyA2OS43OyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+CjxzdHlsZSB0eXBlPSJ0ZXh0L2NzcyI+Cgkuc3Qwe2ZpbGwtcnVsZTpldmVub2RkO2NsaXAtcnVsZTpldmVub2RkO2ZpbGw6IzVEQzZBRDt9Cgkuc3Qxe2VuYWJsZS1iYWNrZ3JvdW5kOm5ldyAgICA7fQoJLnN0MntmaWxsOiM1REM2QUQ7fQo8L3N0eWxlPgo8Zz4KCTxnPgoJCTxwYXRoIGNsYXNzPSJzdDAiIGQ9Ik01Ny4xLDM5LjFDNTQuOCwxOSwzNCw5LjYsMTYuNiwxOC45Yy0yLjQsMS4zLTUuNSwzLjktNy4zLDZDNC43LDMwLjMsMi42LDM4LDMuNSw0NS4yCgkJCWMxLjYsMTMuMSwxNC4xLDI0LjUsMzAuMSwyMi43QzQ3LDY2LjUsNTguOCw1NCw1Ny4xLDM5LjF6IE0xNS45LDQ2LjhjLTEuMSwzLTIuOSw0LjItMC43LDguOWMxLjIsMi42LDMsNC4yLDQuOCw2LjEKCQkJQzEzLjcsNjAuNiwwLDQ0LjYsMTUuOSw0Ni44eiBNMjIuMSw0NS4zYy05LjQsMC4xLTE0LjktMy4xLTE0LjEsNi4zYy0xLjktMi40LTIuNC02LjktMS05LjhjMS4yLTIuNCwzLjYtMy44LDYuNy00LjUKCQkJYzQuOC0xLjIsMTUuNS0wLjcsMjEtMC40QzMzLjMsNDMuNiwyNy42LDQ1LjMsMjIuMSw0NS4zeiBNMzksMzAuNWMtNi42LDQtMTYuMiwzLjEtMjQsNWMtNC45LDEuMi01LjgsMi43LTguNSw1LjMKCQkJYzEuMi0xOC44LDI1LjctMjUuMywzOC0xOC45QzQ0LjQsMjUuNSw0MS43LDI4LjksMzksMzAuNXoiLz4KCQk8cGF0aCBjbGFzcz0ic3QwIiBkPSJNMjIuMSwxNi42YzAuNy0wLjIsMS40LTAuNCwxLjMtMC41Yy0wLjItMC4yLTAuNC0wLjQtMC43LTFsLTAuMy0xYzAuNC0wLjIsMS44LTAuNCwyLjQtMC42CgkJCWMwLjgtMC4yLDEuNi0wLjUsMi4yLTAuOGMxLjMtMC42LDIuNS0xLjYsMy4zLTIuNmMyLjEtMi42LDItNi4xLDEuNy0xMGMtMC41LDAuMy0wLjgsMC43LTEuNSwxLjFjLTQuNywyLjYtOC44LDQuMi04LjYsMTAuOQoJCQlsLTAuNi0xLjJjLTAuMi0wLjQtMC41LTAuOS0wLjctMS4zYy0wLjUtMC45LTAuOS0xLjktMS43LTIuMUwxOCw4QzE4LjIsOS40LDIxLjYsMTMuMywyMi4xLDE2LjZ6Ii8+Cgk8L2c+Cgk8Zz4KCQk8ZyBjbGFzcz0ic3QxIj4KCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTcwLjQsNTQuM2MwLjEsMC4xLDAuMSwwLjIsMC4xLDAuM3MwLDAuMi0wLjEsMC4zYy0wLjEsMC4xLTAuMiwwLjEtMC4zLDAuMWgtMS44djUuNmMwLDAuMSwwLDAuMi0wLjEsMC4zCgkJCQljLTAuMSwwLjEtMC4yLDAuMS0wLjQsMC4xYy0wLjEsMC0wLjMsMC0wLjQtMC4xYy0wLjEtMC4xLTAuMS0wLjItMC4xLTAuM3YtNS42aC0xLjhjLTAuMSwwLTAuMywwLTAuMy0wLjFTNjUsNTQuOCw2NSw1NC43CgkJCQljMC0wLjEsMC0wLjIsMC4xLTAuM3MwLjItMC4xLDAuMy0wLjFoNC42QzcwLjIsNTQuMiw3MC4zLDU0LjMsNzAuNCw1NC4zeiIvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNODQuNCw1NC4zYzAuMSwwLjEsMC4xLDAuMiwwLjEsMC4zdjZjMCwwLjEtMC4xLDAuMy0wLjEsMC40Yy0wLjEsMC4xLTAuMiwwLjEtMC40LDAuMWMtMC4xLDAtMC4yLDAtMC4zLTAuMQoJCQkJYy0wLjEtMC4xLTAuMS0wLjItMC4xLTAuNHYtMi42SDgwdjIuNmMwLDAuMSwwLDAuMy0wLjEsMC40Yy0wLjEsMC4xLTAuMiwwLjEtMC40LDAuMWMtMC4xLDAtMC4zLDAtMC40LTAuMQoJCQkJQzc5LjEsNjEsNzksNjAuOSw3OSw2MC43di02YzAtMC4xLDAtMC4yLDAuMS0wLjNjMC4xLTAuMSwwLjItMC4xLDAuNC0wLjFjMC4xLDAsMC4yLDAsMC4zLDAuMWMwLjEsMC4xLDAuMSwwLjIsMC4xLDAuM3YyLjVoMy42CgkJCQl2LTIuNWMwLTAuMSwwLTAuMiwwLjEtMC4zYzAuMS0wLjEsMC4yLTAuMSwwLjQtMC4xQzg0LjIsNTQuMiw4NC4zLDU0LjMsODQuNCw1NC4zeiIvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNOTQuNCw2MS4xYy0wLjEsMC4xLTAuMiwwLjEtMC40LDAuMWMtMC4xLDAtMC4zLDAtMC40LTAuMWMtMC4xLTAuMS0wLjEtMC4yLTAuMS0wLjR2LTZjMC0wLjEsMC0wLjIsMC4xLTAuMwoJCQkJYzAuMS0wLjEsMC4yLTAuMSwwLjQtMC4xYzAuMSwwLDAuMiwwLDAuMywwLjFjMC4xLDAuMSwwLjEsMC4yLDAuMSwwLjN2NkM5NC42LDYwLjksOTQuNSw2MSw5NC40LDYxLjF6Ii8+CgkJCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMDkuMSw1NC4zYzAuMSwwLjEsMC4xLDAuMiwwLjEsMC4zdjYuMWMwLDAuMSwwLDAuMy0wLjEsMC40Yy0wLjEsMC4xLTAuMiwwLjEtMC4zLDAuMWMtMC4xLDAtMC4xLDAtMC4yLDAKCQkJCWMtMC4xLDAtMC4xLTAuMS0wLjItMC4xbC0zLjktNS4xdjQuOGMwLDAuMSwwLDAuMi0wLjEsMC4zYy0wLjEsMC4xLTAuMiwwLjEtMC4zLDAuMWMtMC4xLDAtMC4yLDAtMC4zLTAuMQoJCQkJYy0wLjEtMC4xLTAuMS0wLjItMC4xLTAuM3YtNi4xYzAtMC4xLDAtMC4zLDAuMS0wLjNjMC4xLTAuMSwwLjItMC4xLDAuMy0wLjFjMC4xLDAsMC4yLDAsMC4yLDBjMC4xLDAsMC4xLDAuMSwwLjIsMC4xbDMuOSw1LjEKCQkJCXYtNC45YzAtMC4xLDAtMC4yLDAuMS0wLjNzMC4yLTAuMSwwLjMtMC4xQzEwOC45LDU0LjIsMTA5LDU0LjMsMTA5LjEsNTQuM3oiLz4KCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTEyMy42LDYwLjdjMCwwLjEtMC4xLDAuMy0wLjIsMC40Yy0wLjEsMC4xLTAuMiwwLjEtMC40LDAuMWMtMC4xLDAtMC4yLTAuMS0wLjMtMC4ybC0yLjQtMy4xbC0xLjEsMS4xdjEuNwoJCQkJYzAsMC4xLDAsMC4zLTAuMSwwLjRjLTAuMSwwLjEtMC4yLDAuMS0wLjQsMC4xYy0wLjEsMC0wLjMsMC0wLjQtMC4xYy0wLjEtMC4xLTAuMS0wLjItMC4xLTAuNHYtNmMwLTAuMSwwLTAuMiwwLjEtMC4zCgkJCQljMC4xLTAuMSwwLjItMC4xLDAuNC0wLjFzMC4zLDAsMC40LDAuMWMwLjEsMC4xLDAuMSwwLjIsMC4xLDAuM3YzLjFsMy41LTMuNGMwLjEtMC4xLDAuMy0wLjIsMC40LTAuMmMwLjEsMCwwLjIsMCwwLjMsMC4xCgkJCQljMC4xLDAuMSwwLjEsMC4yLDAuMSwwLjNjMCwwLjEsMCwwLjItMC4xLDAuM2wtMi40LDIuMmwyLjUsMy4yQzEyMy42LDYwLjUsMTIzLjYsNjAuNiwxMjMuNiw2MC43eiIvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTQzLjMsNTUuMXYyLjFoMi41YzAuMSwwLDAuMywwLDAuMywwLjFzMC4xLDAuMiwwLjEsMC4zYzAsMC4xLDAsMC4yLTAuMSwwLjNjLTAuMSwwLjEtMC4yLDAuMS0wLjMsMC4xCgkJCQloLTIuNXYyLjZjMCwwLjEsMCwwLjItMC4xLDAuM2MtMC4xLDAuMS0wLjIsMC4xLTAuMywwLjFjLTAuMSwwLTAuMywwLTAuNC0wLjFjLTAuMS0wLjEtMC4xLTAuMi0wLjEtMC4zdi02YzAtMC4xLDAtMC4yLDAuMS0wLjMKCQkJCWMwLjEtMC4xLDAuMi0wLjEsMC4zLTAuMWgzLjRjMC4xLDAsMC4zLDAsMC4zLDAuMWMwLjEsMC4xLDAuMSwwLjIsMC4xLDAuM2MwLDAuMSwwLDAuMi0wLjEsMC4zYy0wLjEsMC4xLTAuMiwwLjEtMC4zLDAuMUgxNDMuM3oKCQkJCSIvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTYwLjgsNjAuNmMwLDAuMSwwLjEsMC4xLDAuMSwwLjJjMCwwLjEsMCwwLjItMC4xLDAuM2MtMC4xLDAuMS0wLjIsMC4xLTAuMywwLjFzLTAuMiwwLTAuMy0wLjEKCQkJCWMtMC4yLTAuMS0wLjQtMC4zLTAuNS0wLjVjLTAuMS0wLjMtMC4yLTAuNi0wLjItMS4xYzAtMC4zLTAuMS0wLjYtMC4zLTAuN3MtMC41LTAuMi0wLjgtMC4yaC0ydjIuMmMwLDAuMSwwLDAuMy0wLjEsMC4zCgkJCQlzLTAuMiwwLjEtMC4zLDAuMWMtMC4yLDAtMC4zLDAtMC40LTAuMWMtMC4xLTAuMS0wLjItMC4yLTAuMi0wLjN2LTZjMC0wLjEsMC0wLjIsMC4xLTAuM2MwLjEtMC4xLDAuMi0wLjEsMC4zLTAuMWgyLjgKCQkJCWMwLjQsMCwwLjcsMC4xLDEsMC4zYzAuMywwLjIsMC41LDAuNCwwLjcsMC43YzAuMiwwLjMsMC4zLDAuNywwLjMsMWMwLDAuNC0wLjEsMC43LTAuMywxcy0wLjUsMC42LTAuOCwwLjcKCQkJCWMwLjIsMC4xLDAuNCwwLjMsMC42LDAuNWMwLjEsMC4yLDAuMiwwLjUsMC4yLDAuOGMwLDAuNCwwLjEsMC42LDAuMSwwLjhjMCwwLjEsMC4xLDAuMiwwLjIsMC4zCgkJCQlDMTYwLjcsNjAuNSwxNjAuNyw2MC41LDE2MC44LDYwLjZ6IE0xNTksNTcuNWMwLjEtMC4xLDAuMy0wLjMsMC40LTAuNWMwLjEtMC4yLDAuMS0wLjQsMC4xLTAuN2MwLTAuMy0wLjEtMC42LTAuMy0wLjgKCQkJCWMtMC4yLTAuMi0wLjQtMC4zLTAuNy0wLjNoLTIuMnYyLjVoMi4zQzE1OC43LDU3LjYsMTU4LjksNTcuNiwxNTksNTcuNXoiLz4KCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTE3My43LDYwLjRjMC4xLDAuMSwwLjEsMC4yLDAuMSwwLjNjMCwwLjEsMCwwLjItMC4xLDAuM3MtMC4yLDAuMS0wLjMsMC4xaC0zLjVjLTAuMSwwLTAuMiwwLTAuMy0wLjEKCQkJCWMtMC4xLTAuMS0wLjEtMC4yLTAuMS0wLjN2LTZjMC0wLjEsMC0wLjIsMC4xLTAuM2MwLjEtMC4xLDAuMi0wLjEsMC4zLTAuMWgzLjVjMC4xLDAsMC4zLDAsMC4zLDAuMXMwLjEsMC4yLDAuMSwwLjMKCQkJCWMwLDAuMSwwLDAuMi0wLjEsMC4zYy0wLjEsMC4xLTAuMiwwLjEtMC4zLDAuMWgtM3YyaDIuNWMwLjEsMCwwLjMsMCwwLjMsMC4xYzAuMSwwLjEsMC4xLDAuMiwwLjEsMC4zYzAsMC4xLDAsMC4yLTAuMSwwLjMKCQkJCWMtMC4xLDAuMS0wLjIsMC4xLTAuMywwLjFoLTIuNXYyLjJoM0MxNzMuNSw2MC4zLDE3My42LDYwLjMsMTczLjcsNjAuNHoiLz4KCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTE4My4zLDYxLjFjLTAuNC0wLjEtMC43LTAuNC0xLjEtMC43Yy0wLjEtMC4xLTAuMi0wLjMtMC4yLTAuNGMwLTAuMSwwLTAuMiwwLjEtMC4zCgkJCQljMC4xLTAuMSwwLjItMC4xLDAuMy0wLjFjMC4xLDAsMC4yLDAsMC4zLDAuMWMwLjMsMC4yLDAuNSwwLjQsMC44LDAuNWMwLjMsMC4xLDAuNiwwLjIsMSwwLjJjMC40LDAsMC44LTAuMSwxLjEtMC4zCgkJCQlzMC40LTAuNCwwLjQtMC43YzAtMC4zLTAuMi0wLjYtMC40LTAuOGMtMC4zLTAuMi0wLjctMC4zLTEuMy0wLjVjLTAuNy0wLjEtMS4yLTAuNC0xLjYtMC43Yy0wLjQtMC4zLTAuNi0wLjgtMC42LTEuMwoJCQkJYzAtMC40LDAuMS0wLjcsMC4zLTFjMC4yLTAuMywwLjUtMC41LDAuOS0wLjdjMC40LTAuMiwwLjgtMC4yLDEuMi0wLjJjMC40LDAsMC44LDAuMSwxLjIsMC4yYzAuNCwwLjEsMC43LDAuMywwLjksMC41CgkJCQljMC4yLDAuMSwwLjIsMC4zLDAuMiwwLjRjMCwwLjEsMCwwLjItMC4xLDAuM2MtMC4xLDAuMS0wLjIsMC4xLTAuMywwLjFjLTAuMSwwLTAuMiwwLTAuMi0wLjFjLTAuMi0wLjItMC40LTAuMy0wLjctMC40CgkJCQlzLTAuNi0wLjItMC45LTAuMmMtMC40LDAtMC44LDAuMS0xLjEsMC4zYy0wLjMsMC4yLTAuNCwwLjQtMC40LDAuN2MwLDAuMywwLjEsMC42LDAuNCwwLjhjMC4zLDAuMiwwLjcsMC4zLDEuMiwwLjQKCQkJCWMwLjUsMC4xLDAuOSwwLjIsMS4zLDAuNGMwLjMsMC4yLDAuNiwwLjQsMC44LDAuNnMwLjMsMC42LDAuMywxLjFjMCwwLjQtMC4xLDAuNy0wLjMsMWMtMC4yLDAuMy0wLjUsMC41LTAuOSwwLjcKCQkJCWMtMC40LDAuMi0wLjgsMC4yLTEuMiwwLjJDMTg0LjEsNjEuMywxODMuNyw2MS4yLDE4My4zLDYxLjF6Ii8+CgkJCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0yMDEsNTQuM2MwLjEsMC4xLDAuMSwwLjIsMC4xLDAuM3Y2YzAsMC4xLTAuMSwwLjMtMC4yLDAuNGMtMC4xLDAuMS0wLjIsMC4xLTAuNCwwLjFjLTAuMSwwLTAuMiwwLTAuMy0wLjEKCQkJCWMtMC4xLTAuMS0wLjEtMC4yLTAuMS0wLjR2LTIuNmgtMy41djIuNmMwLDAuMS0wLjEsMC4zLTAuMiwwLjRjLTAuMSwwLjEtMC4yLDAuMS0wLjMsMC4xYy0wLjEsMC0wLjMsMC0wLjQtMC4xCgkJCQljLTAuMS0wLjEtMC4xLTAuMi0wLjEtMC40di02YzAtMC4xLDAtMC4yLDAuMS0wLjNjMC4xLTAuMSwwLjItMC4xLDAuNC0wLjFjMC4xLDAsMC4yLDAsMC4zLDAuMWMwLjEsMC4xLDAuMSwwLjIsMC4xLDAuM3YyLjVoMy41CgkJCQl2LTIuNWMwLTAuMSwwLTAuMiwwLjEtMC4zYzAuMS0wLjEsMC4yLTAuMSwwLjQtMC4xQzIwMC44LDU0LjIsMjAwLjksNTQuMywyMDEsNTQuM3oiLz4KCQk8L2c+CgkJPGcgY2xhc3M9InN0MSI+CgkJCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik02OS41LDI5LjJ2Nmg3LjNjMC42LDAsMS4xLDAuMiwxLjUsMC42YzAuNCwwLjQsMC42LDAuOSwwLjYsMS40YzAsMC41LTAuMiwwLjktMC42LDEuMwoJCQkJYy0wLjQsMC40LTAuOSwwLjYtMS41LDAuNmgtNy4zVjQ3YzAsMC42LTAuMiwxLjEtMC42LDEuNXMtMC45LDAuNi0xLjUsMC42Yy0wLjYsMC0xLjItMC4yLTEuNS0wLjZjLTAuNC0wLjQtMC42LTAuOS0wLjYtMS41CgkJCQlWMjcuNGMwLTAuNiwwLjItMS4xLDAuNi0xLjVjMC40LTAuNCwwLjktMC42LDEuNS0wLjZoMTFjMC42LDAsMS4xLDAuMiwxLjUsMC42czAuNiwwLjksMC42LDEuNGMwLDAuNS0wLjIsMC45LTAuNiwxLjMKCQkJCXMtMC45LDAuNi0xLjUsMC42SDY5LjV6Ii8+CgkJCTxwYXRoIGNsYXNzPSJzdDIiIGQ9Ik0xMDUuNiw0Ni41YzAuMiwwLjMsMC4zLDAuNiwwLjMsMC45YzAsMC40LTAuMSwwLjgtMC40LDEuMWMtMC4zLDAuNC0wLjksMC42LTEuNiwwLjZjLTAuNSwwLTEtMC4xLTEuNS0wLjQKCQkJCWMtMS42LTAuOS0yLjQtMi44LTIuNC01LjdjMC0wLjgtMC4zLTEuNS0wLjgtMS45Yy0wLjUtMC41LTEuMy0wLjctMi4zLTAuN2gtNi40VjQ3YzAsMC42LTAuMiwxLjEtMC41LDEuNQoJCQkJYy0wLjMsMC40LTAuOCwwLjYtMS4zLDAuNmMtMC43LDAtMS4yLTAuMi0xLjctMC42cy0wLjctMC45LTAuNy0xLjVWMjcuNGMwLTAuNiwwLjItMS4xLDAuNi0xLjVjMC40LTAuNCwwLjktMC42LDEuNS0wLjZoOS44CgkJCQljMS4yLDAsMi4zLDAuMywzLjMsMWMxLDAuNiwxLjksMS41LDIuNSwyLjZjMC42LDEuMSwwLjksMi40LDAuOSwzLjdjMCwxLjEtMC4zLDIuMi0wLjksMy4zYy0wLjYsMS4xLTEuNCwxLjktMi40LDIuNgoJCQkJYzEuNCwxLDIuMiwyLjMsMi4zLDRjMC4xLDAuNCwwLjEsMC43LDAuMSwxLjFjMC4xLDAuNywwLjIsMS4yLDAuMywxLjVjMC4xLDAuMywwLjMsMC41LDAuNiwwLjdDMTA1LjIsNDYsMTA1LjQsNDYuMiwxMDUuNiw0Ni41egoJCQkJIE05OS4xLDM2LjRjMC40LTAuNCwwLjctMC45LDEtMS41YzAuMi0wLjYsMC40LTEuMywwLjQtMi4xYzAtMC42LTAuMS0xLjItMC40LTEuOGMtMC4yLTAuNS0wLjYtMS0xLTEuMwoJCQkJYy0wLjQtMC4zLTAuOC0wLjUtMS4yLTAuNWgtNy40VjM3aDcuNEM5OC4zLDM3LDk4LjcsMzYuOCw5OS4xLDM2LjR6Ii8+CgkJCTxwYXRoIGNsYXNzPS
+            JzdDIiIGQ9Ik0xMzAuMyw0Ny4zYzAsMC42LTAuMiwxLjEtMC42LDEuNGMtMC40LDAuNC0wLjgsMC42LTEuMywwLjZjLTAuNCwwLTAuOC0wLjEtMS4xLTAuNHMtMC42LTAuNi0wLjgtMQoJCQkJbC0xLjgtNC4xaC0xMC4xbC0xLjgsNC4xYy0wLjIsMC40LTAuNCwwLjgtMC43LDFjLTAuMywwLjItMC43LDAuNC0xLjEsMC40Yy0wLjYsMC0xLTAuMi0xLjMtMC41Yy0wLjMtMC4zLTAuNS0wLjctMC41LTEuMwoJCQkJYzAtMC4yLDAtMC40LDAuMS0wLjZsOC41LTIwLjNjMC4yLTAuNSwwLjUtMC44LDAuOC0xLjFjMC40LTAuMiwwLjgtMC40LDEuMi0wLjNjMC40LDAsMC44LDAuMSwxLjEsMC40czAuNiwwLjYsMC44LDFsOC40LDE5LjkKCQkJCUMxMzAuMiw0Ni44LDEzMC4zLDQ3LDEzMC4zLDQ3LjN6IE0xMTYuMywzOS45aDYuOGwtMy40LThMMTE2LjMsMzkuOXoiLz4KCQkJPHBhdGggY2xhc3M9InN0MiIgZD0iTTE1My45LDQ3LjNjMCwwLjYtMC4yLDEuMS0wLjYsMS40cy0wLjgsMC42LTEuMywwLjZjLTAuNCwwLTAuOC0wLjEtMS4xLTAuNGMtMC4zLTAuMi0wLjYtMC42LTAuOC0xCgkJCQlsLTEuOC00LjFoLTEwLjFsLTEuOCw0LjFjLTAuMiwwLjQtMC40LDAuOC0wLjcsMWMtMC4zLDAuMi0wLjcsMC40LTEuMSwwLjRjLTAuNiwwLTEtMC4yLTEuMy0wLjVjLTAuMy0wLjMtMC41LTAuNy0wLjUtMS4zCgkJCQljMC0wLjIsMC0wLjQsMC4xLTAuNmw4LjUtMjAuM2MwLjItMC41LDAuNS0wLjgsMC44LTEuMWMwLjQtMC4yLDAuOC0wLjQsMS4yLTAuM2MwLjQsMCwwLjgsMC4xLDEuMSwwLjRzMC42LDAuNiwwLjgsMWw4LjQsMTkuOQoJCQkJQzE1My44LDQ2LjgsMTUzLjksNDcsMTUzLjksNDcuM3ogTTEzOS45LDM5LjloNi44bC0zLjQtOEwxMzkuOSwzOS45eiIvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMTc2LjUsMjguNmwtMTIuOSwxNi42aDEwLjhjMC42LDAsMS4xLDAuMiwxLjUsMC41YzAuNCwwLjQsMC42LDAuOCwwLjYsMS40YzAsMC42LTAuMiwxLTAuNiwxLjQKCQkJCWMtMC40LDAuNC0wLjksMC42LTEuNSwwLjZoLTE0LjljLTAuNiwwLTEuMS0wLjItMS41LTAuNmMtMC40LTAuNC0wLjYtMC45LTAuNi0xLjRjMC0wLjQsMC4yLTAuOSwwLjUtMS4zbDEyLjktMTYuNmgtOS44CgkJCQljLTAuNiwwLTEuMS0wLjItMS41LTAuNWMtMC40LTAuNC0wLjYtMC44LTAuNi0xLjRjMC0wLjYsMC4yLTEsMC42LTEuNHMwLjktMC41LDEuNS0wLjVoMTMuOWMwLjUsMCwxLDAuMiwxLjUsMC42CgkJCQlzMC43LDAuOSwwLjcsMS40QzE3Ni45LDI3LjgsMTc2LjgsMjguMiwxNzYuNSwyOC42eiIvPgoJCQk8cGF0aCBjbGFzcz0ic3QyIiBkPSJNMjAyLjgsNDMuNGMtMSwxLjktMi40LDMuMy00LjEsNC40Yy0xLjgsMS4xLTMuNywxLjYtNS45LDEuNnMtNC4yLTAuNS01LjktMS42Yy0xLjgtMS4xLTMuMS0yLjYtNC4xLTQuNAoJCQkJYy0xLTEuOS0xLjUtMy45LTEuNS02LjJjMC0yLjIsMC41LTQuMywxLjUtNi4yczIuNC0zLjMsNC4xLTQuNGMxLjgtMS4xLDMuNy0xLjYsNS45LTEuNnM0LjIsMC41LDUuOSwxLjYKCQkJCWMxLjgsMS4xLDMuMSwyLjYsNC4xLDQuNGMxLDEuOSwxLjUsMy45LDEuNSw2LjJDMjA0LjMsMzkuNSwyMDMuOCw0MS41LDIwMi44LDQzLjR6IE0xOTguOSwzMy4xYy0wLjYtMS4yLTEuNS0yLjItMi42LTIuOQoJCQkJYy0xLjEtMC43LTIuMy0xLjEtMy43LTEuMWMtMS40LDAtMi42LDAuNC0zLjcsMS4xYy0xLjEsMC43LTEuOSwxLjctMi41LDIuOWMtMC42LDEuMi0wLjksMi42LTAuOSw0LjFjMCwxLjUsMC4zLDIuOSwwLjksNC4xCgkJCQljMC42LDEuMiwxLjQsMi4yLDIuNSwyLjljMS4xLDAuNywyLjMsMS4xLDMuNywxLjFjMS40LDAsMi42LTAuNCwzLjctMS4xYzEuMS0wLjcsMS45LTEuNywyLjYtMi45YzAuNi0xLjIsMC45LTIuNiwwLjktNC4xCgkJCQlDMTk5LjksMzUuNywxOTkuNSwzNC4zLDE5OC45LDMzLjF6Ii8+
+            CgkJPC9nPgoJPC9nPgo8L2c+Cjwvc3ZnPgo=" alt="">
+            <i class='fas fa-map-marker-alt'></i>
+            <a href="">GVC4+5M9, Dha...</a>
+        </div>
+
+        <div class="search">
+           <input type="text" placeholder="Find fresh vegetables, fruits and dairy..."> 
+        </div>
+        <div class="manu">
+            <div> <a href="" data-target="#cartModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" 
+              href="#myModal"><i class="fa fa-shopping-cart"></i>Cart</a> </div>
+            <div> <a href="">Cradit</a> </div>
+            <div> <a data-target="#exampleModal" data-toggle="modal" class="MainNavText" id="MainNavHelp" 
+                href="#myModal" >Login</a></div>
+            
+        </div>
+    </div>
+    <!-- navbar end -->
+    <!-- fraaza iteams -->
+    <div id="service">
+        <div class="add">
+          <div class="slideshow-container">
+
+                <a href=""><div class="mySlides fade">
+                  <div class="numbertext">1 / 3</div>
+                  <img src="https://images.fraazo.com/fraazo-prod/web_ban/3857.png" style="width:100%">
+                  <div class="text">Caption Text</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">2 / 3</div>
+                  <img src="https://images.fraazo.com/fraazo-prod/web_ban/3921.png" style="width:100%">
+                  <div class="text">Caption Two</div>
+                </div>
+                
+                <div class="mySlides fade">
+                  <div class="numbertext">3 / 3</div>
+                  <img src="https://images.fraazo.com/fraazo-prod/web_ban/3673.png" style="width:100%">
+                  <div class="text">Caption Three</div>
+                </div>
+                
+                </div></a>
+                <br>
+                <div style="text-align:center">
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                    <span class="dot"></span> 
+                  </div>
+                  
+        </div>
+        <div class="other">
+            <div>
+            <img src="https://fraazo.com/static/Web1-cafcda6bf22c11e6bbaed467d13a0eb7.png" alt=""></div>
+                  <div>
+                  <img src="https://fraazo.com/static/Web2-9a152d86240414d76ce205c491e47c4e.png" alt=""></div>
+                  <div>
+            <img src="https://fraazo.com/static/Web3-9f5a46f22ff99bcfe079257218356413.png" alt=""></div>
+        </div>
+    </div>
+   <h2>BEST DEALS</h2>
+
+    <!-- items in store
+      <div class="carousel">
+        <button class='flt-left' onclick="slideRight(this);"><i class="fa fa-angle-left" aria-hidden="true"></i> < </button>
+        <div class="row flt-left">
+          
+         <div class="row-container">
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/VBOT12.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+            <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/LCOR21.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+            </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FBAN14.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p> 
+            </div>
+        </div>
+          <div class="clear"></div>
+          </div>
+          </div>
+         <button class='flt-left'  onclick="slideLeft(this);"><i class="fa fa-angle-right" aria-hidden="true"></i>></button>
+          <div class="clear"></div>
+      </div>
+
+
+     
+      <div id="pC">
+          <a href=""><div><img src="https://images.fraazo.com/fraazo-prod/web/298.png" alt=""></div></a>
+          <a href=""><div><img src="https://images.fraazo.com/fraazo-master/webban/Fruits.png" alt=""></div></a>
+          <a href=""><div><img src="https://images.fraazo.com/fraazo-master/webban/Vegetables.png" alt=""></div></a>
+          <a href=""><div><img src="https://images.fraazo.com/fraazo-prod/web/201.png" alt=""></div></a>
+      </div>
+      <div class="pC2">
+        <a href=""><div><img src="https://images.fraazo.com/fraazo-prod/web/199.png" alt=""></div></a>
+      </div>
+
+
+      <div class="carousel">
+        <button class='flt-left' onclick="slideRight(this);"><i class="fa fa-angle-left" aria-hidden="true"></i> < </button>
+        <div class="row flt-left">
+          
+         <div class="row-container">
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/VBOT12.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+            <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/LCOR21.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+            </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FBAN14.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p> 
+            </div>
+        </div>
+          <div class="clear"></div>
+          </div>
+          </div>
+         <button class='flt-left'  onclick="slideLeft(this);"><i class="fa fa-angle-right" aria-hidden="true"></i>></button>
+          <div class="clear"></div>
+      </div>
+
+
+
+
+      <div class="carousel">
+        <button class='flt-left' onclick="slideRight(this);"><i class="fa fa-angle-left" aria-hidden="true"></i> < </button>
+        <div class="row flt-left">
+          
+         <div class="row-container">
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/VBOT12.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+            <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/LCOR21.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+            </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FBAN14.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p> 
+            </div>
+        </div>
+          <div class="clear"></div>
+          </div>
+          </div>
+         <button class='flt-left'  onclick="slideLeft(this);"><i class="fa fa-angle-right" aria-hidden="true"></i>></button>
+          <div class="clear"></div>
+      </div>
+
+
+
+      <div class="carousel">
+        <button class='flt-left' onclick="slideRight(this);"><i class="fa fa-angle-left" aria-hidden="true"></i> < </button>
+        <div class="row flt-left">
+          
+         <div class="row-container">
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/VBOT12.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+            <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/LCOR21.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+            </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FBAN14.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p> 
+            </div>
+        </div>
+          <div class="clear"></div>
+          </div>
+          </div>
+         <button class='flt-left'  onclick="slideLeft(this);"><i class="fa fa-angle-right" aria-hidden="true"></i>></button>
+          <div class="clear"></div>
+      </div>
+
+
+
+
+      <div class="carousel">
+        <button class='flt-left' onclick="slideRight(this);"><i class="fa fa-angle-left" aria-hidden="true"></i> < </button>
+        <div class="row flt-left">
+          
+         <div class="row-container">
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/VBOT12.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+        <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+            <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/LCOR21.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+            </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/FBAN14.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p>
+        </div>
+        </div>
+           <div class="container">
+          <img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" />
+          <div style="margin-left: 12px;">
+            <p>Coconut</p>
+            <p>1 pc</p>
+            <p>₹25</p> 
+            </div>
+        </div>
+          <div class="clear"></div>
+          </div>
+          </div>
+         <button class='flt-left'  onclick="slideLeft(this);"><i class="fa fa-angle-right" aria-hidden="true"></i>></button>
+          <div class="clear"></div>
+      </div> -->
+      <!-- start slider -->
+      <div class="container">
+   
+        <!--The main div for carousel-->
+        <div class="container text-center">
+        <div class="carousel slide row" data-ride="carousel" data-type="multi" data-interval="500000" id="fruitscarousel">
+        
+            <div class="carousel-inner">
+                <div class="item active">
+                    <div class="col-md-3 col-sm-4 col-xs-12" id="sha"><a href="#"><img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" class="img-responsive"></a>
+                    <div style="text-align: left;"><p>Coconut</p>
+                    <p>1 PC</p></div>
+                    <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-prod/products/product_images/000/000/006/original/data/tr:w-256,h-256,f-webp" class="img-responsive"></a>
+                      <div style="text-align: left;"><p>Apple</p>
+                        <p>1 PC</p></div>
+                        <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div></div>
+                </div>
+                <!-- <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-master/BPOT11.png/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-prod/products/product_images/000/000/240/original/data/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-master/VTON12.png/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-master/BONI11.png/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                 <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-master/VCAB12.png/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-prod/products/product_images/000/000/135/original/data/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-prod/products/product_images/000/000/257/original/data/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-prod/products/product_images/000/000/117/original/data/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-master/FBAN14.png/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div> 
+                <div class="item">
+                    <div class="col-md-3 col-sm-4 col-xs-12"><a href="#"><img src="https://images.fraazo.com/fraazo-master/FCOC1.png/tr:w-256,h-256,f-webp" class="img-responsive"></a></div>
+                    <div style="text-align: left;"><p>Coconut</p>
+                      <p>1 PC</p></div>
+                      <div style="display: flex;margin:auto;gap: 20%;align-items: center;"><p>25 ₹</p><button style="margin-left:10px;">Add</button></div>
+                  </div>-->
+            </div>
+        
+            <a class="left carousel-control" href="#fruitscarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+            <a class="right carousel-control" href="#fruitscarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a> 
+        
+        </div>
+        </div>
+<!-- end slider -->
+      <!-- login modal -->
+      <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Welcome to Fraazo! </h5>
+           <h4> Sign In to track your Order and More.</h4>
+           
+           <input type="number" width="80%" height="40px" placeholder="Enter Your Number Here">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" style="align-items: center;">Send OTP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- end -->
+
+          <!-- Modal -->
+<div class="modal fade right_modal " id="cartModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document" style="      width: 41%;
+  margin-right: 50%;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Cart </h2>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        
+        <button type="button" class="btn btn-primary">Empty Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- end -->
+<!-- Product Catagory (pC) -->
+<div id="pC">
+  <a href=""><div><img src="https://images.fraazo.com/fraazo-prod/web/298.png" alt=""></div></a>
+  <a href=""><div><img src="https://images.fraazo.com/fraazo-master/webban/Fruits.png" alt=""></div></a>
+  <a href=""><div><img src="https://images.fraazo.com/fraazo-master/webban/Vegetables.png" alt=""></div></a>
+  <a href=""><div><img src="https://images.fraazo.com/fraazo-prod/web/201.png" alt=""></div></a>
+</div>
+<div class="pC2">
+  <a href=""><div><img src="https://images.fraazo.com/fraazo-prod/web/199.png" alt=""></div></a>
+</div>
+<!-- Footer -->
+<div class="footer">
+  <p style="background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNzI0IiBoZWlnaHQ9Ijc4NCIgdmlld0JveD0iMCAwIDcyNCA3ODQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIG9wYWNpdHk9IjAuMTUiIGQ9Ik0xMTEuNzY4IDEyMi42Qy0xMS43NDk0IDExMy4wMzQgLTguOTc1MzQgNDIuMDkwMiAtNTIuMTA4MyAwTC0zNTYgMjIzLjg0M0MtMjkyLjYwOCA0MTUuMTYzIC0xMjguMzEgODg2LjMzOSAtODQuMzkyOSA3NjMuODk1QzIxLjIzMjEgNDI2LjI3MiAxODQuMDkgNTU3LjAwNiA0MTUuNDQgNjQ4LjgzOUM2NDYuNzg5IDc0MC42NzIgODUzLjAyOSA1ODIuODI0IDYyNC44MDQgMzAzLjY3MkMzOTYuNTc4IC05Mi40MjE5IDIzNS4yODUgMTMyLjE2NiAxMTEuNzY4IDEyMi42WiIgZmlsbD0iIzVEQzZBRCIvPgo8cGF0aCBvcGFjaXR5PSIwLjE1IiBkPSJNMjU2LjAzMiA2ODIuMTc3QzI1MS45OTkgNzExLjcxOCAyMjYuMTQ5IDcwMC44IDE4OC4zNTEgNjk1LjYzOUMxNTAuNTUyIDY5MC40NzkgMTE1LjExNyA2OTMuMDMgMTE5LjE1IDY2My40ODlDMTIzLjE4NCA2MzMuOTQ4IDE1Ny4wOTUgNjE0LjE4MyAxOTQuODk0IDYxOS4zNDRDMjMyLjY5MyA2MjQuNTA1IDI2MC4wNjUgNjUyLjYzNiAyNTYuMDMyIDY4Mi4xNzdaIiBmaWxsPSIjNURDNkFEIi8+CjxwYXRoIG9wYWNpdHk9IjAuMTUiIGQ9Ik02NjIuNzc5IDE1MS45NjFDNjUwLjUxOSAxNjQuMjIxIDYzOC43NTcgMTQzLjQ3MyA2MDEuNDc5IDEzNC45ODZDNTYyLjgxMyAxMzQuOTg2IDU1NC42ODMgMTA5LjA4MSA1NzEuMzAxIDg5LjE5MTJDNTg3LjkxOCA2OS4zMDEzIDYxMi43ODcgNjcuNDkzMSA2MzguNzU3IDg5LjE5MDNDNjY0LjcyOCAxMTAuODg4IDY3Mi4yMSAxMzQuOTg2IDY2Mi43NzkgMTUxLjk2MVoiIGZpbGw9IiM1REM2QUQiLz4KPC9zdmc+Cg==');">
+<img src="https://fraazo.com/static/app-screen-95bf468762091341a8e4bb213eeda2f8.png" alt="" width="50%"></p>
+<div class="detail">
+<h2>Dowmload The App</h2>
+<button style="width: 40%;border:1px solid black; background-color: black; color:white;">Android</button>
+<button>IOS</button>
+<p>Enter your phone number to receive a text with a link to download the app</p>
+<input type="number" width="">
+</div>
+</div>
+<img src="https://fraazo.com/static/footerDesign-26fcca451f726500fd06e7fc02d09cb4.svg" alt="" style="width: 100%;">
+ <div style="background-color:#0d5241;margin-top: 0px;">
+  <h1 >
+    Fresh Fruits & Vegetables Grocery Shopping Online
+  </h1>
+  <br>
+  <p>The quality of fruits & vegetables is synonymous with its freshness, while getting fresh fruits and vegetables is a tedious task at times but with Fraazo you can get it delivered at your doorstep. Fraazo brings a wide range of farm fresh fruits, vegetables and dairy products to you, all in just a click. We currently serve about more than 3lacs+ happy customers in Mumbai, Navi Mumbai, Thane, Kalyan-Dombivli and Virar. Fraazo has made online shopping of fresh produce much easier with its hassle-free home delivery options. You can choose the delivery slot as per your choice and schedule your order accordingly. Or you can simply opt for the option of 90 mins Express Delivery and get your order delivered in not more than 90 mins. The farm fresh fruits and vegetables on Fraazo are available at best prices compared to other vendors & supermarkets. Plus with so many exciting offers, one can save up to 20% on their Monthly grocery budgets. No need to wait in long queues in crowded supermarkets or local mandis for getting the best prices on veggies. Kick the stress out & just Fraazo your dose of freshness with savings at the comfort of your home. Fraazo directly sources fresh fruits and veggies from an extensive network of farmers across Maharashtra, hence bringing you fresh produce straight from farm to table in less than 12 hours. With our Safe & Hygienic packaging and minimal multiple handling, we ensure you get the best quality fresh produce
+  The fruits and vegetables are 100% hand-picked fresh from farm, while some products are hydroponically-grown. The wide range of fruits and veggies on Fraazo include more than 100+ farm fresh vegetables and fruits, starting from regular veggies like dudhi, cauliflower, beetroot, cabbage, etc. to exotic veggies like broccoli, lettuce etc. We also provide the essential vegetable combos like Onion, Potato, Tomato Combo, Salad Combo, Fresh Cut-Veg Combos or Fruit Combos like Banana, Apple Combo, & more. There are a lot of exciting deals on vegetables & fruits, every day of the week, the major highlights being Monday Mandi, Veggie Wednesday, Freelivery Thursday & Fruit Friday.For payments, you can choose from the multiple payment options as Fraazo accepts Debit card, Credit card, UPI options like iMobile, Google Pay, 8+ e-Wallet options like Phonepe, JioPay, MobiKwik, Sodexo, NetBanking and Cash on Delivery (COD). If you ever have an issue with missing items or any quality issue, you can raise your concern with us in 48 hrs & we shall refund/ replace your product with “no-questions-asked-policy”. You can simply connect with our Customer Support team via Chat Support or Call on 9152291522.
+</p>
+ 
+</div>
+</body>
+<script src="Home.js">
+</script>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
